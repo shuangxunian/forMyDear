@@ -67,6 +67,12 @@ const getTodayClass = (nowWeek,nowWeekDay) => {
     // 周二
     [
       {
+        time: '1-2节',
+        name: '大学英语（二）',
+        class: [1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18],
+        where: '3号3103',
+      },
+      {
         time: '3-4节',
         name: '思想道德与法治',
         class: [1,2,3,4,5,6,7,8,9,10,11,12,13,16,17,18],
@@ -261,7 +267,9 @@ const main = async() => {
     },
   }
 
-  const finalRes = await axios.post(url, data)
+  await axios.post(url, data)
+  data.touser = oHccb6lU8MnEpAJ7SQs5DXWEQLgs
+  await axios.post(url, data)
 }
 
 const task = cron.schedule('0 0 7 * * *', main);
